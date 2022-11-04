@@ -1,8 +1,4 @@
-# Slidev Template
-
-## Why is Slidev Template
-
-Using this slidev template on GitHub, you can start your slides quickly with Pnpm.
+# Unstoppable login findings
 
 To start the slide show:
 

@@ -23,7 +23,7 @@ drawings:
 css: unocss
 ---
 
-# Welcome to Slidev
+# Unstoppable login findings
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://github.com/iam-frankqiu/slidev-template" target="_blank" alt="GitHub"
@@ -38,7 +38,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
-# What is Slidev?
+# What is Unstoppable Login?
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
 

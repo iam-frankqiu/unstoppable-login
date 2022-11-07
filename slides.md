@@ -68,7 +68,7 @@ h1 {
 # Process
 
 <div class="flex justify-center">
-<img src="/images/login-with-unstoppable-flow-revised.png" style="width: 40vw;" />
+<img src="/images/login-with-unstoppable-flow-revised.png" style="width: 35vw;" />
 </div>
 
 
@@ -113,6 +113,174 @@ Login with Unstoppable currently supports the following top-level domains (TLDs)
 ### Considerations
 
 The components provided by the UAuth libraries are only available in React. The UAuth modal is written in React, which has a larger library size.
+
+---
+
+# Featured Updates
+
+### Login with Verified Solana Wallet
+
+Applications can confirm that a user authenticated with a Solana address using the getAuthorizationAccount() method of UAuth.
+
+```
+const authorization = await uauth.loginWithPopup();
+const account = uauth.getAuthorizationAccount(authorization);
+```
+
+The VerifiedAddress returned for a Login session authorized by a Solana wallet would look something like this:
+
+
+```
+{
+  address: 'Ft2Z5NocHXD61jHzSkzk8qpVkMETDETitoyei6QQDXt4', // The verified solana address
+  message: 'Link Unstoppable Domain domain.tld with secondary wallet.\n    \n    {\n  "domain": "domain.tld",\n  "currency": "SOL",\n  "wallet": "Ft2Z5NocHXD61jHzSkzk8qpVkMETDETitoyei6QQDXt4"\n}',
+  signature: '27D5QwhpVZCEFPxQBNCkTb8NKKL7gKEaRqCitiXTC1BF2n1Bdd3MReBGXaE2yi1Cz683hDchvEBuTXaHTVbc83q',
+  symbol: 'SOL',
+},
+```
+
+---
+
+# Getting Started
+
+### 1.Get Your Client Credentials
+
+<video loop autoplay muted src="https://docs.unstoppabledomains.com/videos/connect-wallet-and-create-client.mp4"></video>
+
+---
+
+- Go to the Client Management Dashboard .
+- Click the Connect Wallet and sign the transaction.
+- Click the Create Client button to add a new client.
+
+Once you've created your client, you will need the Client Metadata to configure your UAuth application. This can be copied directly from the Login page of your Client Configuration.
+
+```
+{
+    clientID: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    redirectUri: "http://localhost",
+    scope: "openid wallet",
+}
+
+```
+
+---
+
+### 2: Choose Your Integration Path
+
+<div class="flex justify-center">
+<img src="/images/integration_guide.png" style="width: 40vw;" />
+</div>
+
+---
+
+### 3: Configure the Login UI
+
+Step 1: Access User Information
+
+```
+import UAuth from '@uauth/js'
+
+const uauth = new UAuth({
+  // ... options
+})
+
+uauth.user()
+  .then((user) => {
+    // user exists
+    console.log("User information:", user)
+  })
+  .catch(() => {
+    // user does not exist
+  })
+  ```
+
+  ```
+
+{
+  "sub" : "domain.tld", // The domain used to login
+  "wallet_address" : "0x . . . ", // The Ethereum wallet that owns the domain
+  "wallet_type_hint" : "web3",
+  "eip4361_message" : "identity.unstoppable domains wants you sign in with your Ethereum account: . . . ",
+  "eip4361_signature" : "0x . . . ",
+}
+
+  ```
+---
+
+### Step 2: Get the Authorization Account
+
+In addition to logging in with the controlling Ethereum or Polygon wallet, UAuth service allows users to login using certain verified accounts associated with the domain's ud.me profile, such as a Solana wallet address. You can check which account was used to authorize the login session using the getAuthorizationAccount() method.
+
+```
+// In the login handler
+const authorization = await uauth.loginWithPopup();
+const account = uauth.getAuthorizationAccount(authorization);
+
+```
+
+---
+### Step 3: Verify the Login Flow and Scopes
+
+<div class="flex justify-center">
+<img src="/images/step3.png" style="width: 40vw;" />
+</div>
+
+- Modal 1. User clicks on Login with Unstoppable Button.
+- Modal 2. A modal is displayed which allows the user to begin the authorization process by entering their Unstoppable domain.
+- Modal 3. During login, the user will see the resolved address and the information being requested by the application (i.e. the scopes). The user must sign the transaction using their wallet address in order to share their information with the dApp.
+
+---
+
+### Step 4: Create Login Buttons
+
+<div class="flex justify-center">
+<img src="/images/button_style.png" style="width: 40vw;" />
+</div>
+
+
+---
+### 4: Promote Your Application
+
+<div class="flex justify-center">
+<img src="/images/app_store.png" style="width: 40vw;" />
+</div>
+
+---
+
+### Humanity Check for Login
+
+To offer the Humanity Check feature, Unstoppable Domains has partnered with identity verification services such as Persona. When a Humanity Check provider verifies a new person, it assigns that person a new randomly generated ID number, which is then passed to UD.
+
+#### Persona
+Persona asks users to take a photo of their government-issued ID and a few selfies. Persona uses these images to verify that a person is who they claim to be. Every time Persona verifies a new person, it gives that person a new randomly generated ID number.
+
+<div class="flex justify-center">
+<img src="/images/humanity.png" style="width: 40vw;" />
+</div>
+
+---
+
+### Scopes for Login
+
+<div class="flex justify-center">
+<img src="/images/login-scopes.png" style="width: 40vw;" />
+</div>
+
+Login with Unstoppable supports the following scopes which are detailed below:
+
+```
+openid (required)
+wallet
+email
+humanity_check
+profile
+social
+badges
+```
+
+---
+
 
 
 

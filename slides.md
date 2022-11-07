@@ -40,25 +40,15 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # What is Unstoppable Login?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+<div class="flex justify-center">
+<img src="/images/login-promo.png" style="width: 40vw;" />
+</div>
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+Login with Unstoppable allows owners of Unstoppable Domains to log in and share profile information with EVM-compatible applications. This gives users more control over their personal information and allows developers to access information about their users without needing to host or maintain a CRM database.
 
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
 
 <style>
 h1 {
@@ -72,24 +62,58 @@ h1 {
 }
 </style>
 
-<!--
-Here is another comment.
--->
 
 ---
 
-# Navigation
+# Process
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+<div class="flex justify-center">
+<img src="/images/login-with-unstoppable-flow-revised.png" style="width: 40vw;" />
+</div>
 
-### Keyboard Shortcuts
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+---
+
+# Benefits
+
+### Benefits for Applications
+
+- Avoid hosting a database of user contact information by requesting access only when it's needed.
+- Request additional data from users such as social profiles to further enhance the user experience.
+- Communicate with users directly via opt-in access and the @ud.me proxy email service.
+
+### Benefits for Users
+
+- Maintain absolute control over login credentials.
+- Sharing personal information is 100% opt-in.
+- Receive email communications without sharing private email addresses.
+- Only one login for every web3 app. No need to remember multiple unique usernames and passwords.
+
+---
+
+# Limitations
+
+### Supported TLDs
+
+Login with Unstoppable currently supports the following top-level domains (TLDs):
+
+```
+.crypto
+.nft
+.blockchain
+.bitcoin
+.wallet
+.888
+.dao
+.x
+.klever
+.zil *
+```
+
+### Considerations
+
+The components provided by the UAuth libraries are only available in React. The UAuth modal is written in React, which has a larger library size.
+
 
 
 

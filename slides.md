@@ -193,10 +193,9 @@ uauth.user()
   .catch(() => {
     // user does not exist
   })
-  ```
+```
 
-  ```
-
+```
 {
   "sub" : "domain.tld", // The domain used to login
   "wallet_address" : "0x . . . ", // The Ethereum wallet that owns the domain
@@ -204,8 +203,8 @@ uauth.user()
   "eip4361_message" : "identity.unstoppable domains wants you sign in with your Ethereum account: . . . ",
   "eip4361_signature" : "0x . . . ",
 }
+```
 
-  ```
 ---
 
 ### Step 2: Get the Authorization Account
@@ -220,6 +219,7 @@ const account = uauth.getAuthorizationAccount(authorization);
 ```
 
 ---
+
 ### Step 3: Verify the Login Flow and Scopes
 
 <div class="flex justify-center">
@@ -240,6 +240,7 @@ const account = uauth.getAuthorizationAccount(authorization);
 
 
 ---
+
 ### 4: Promote Your Application
 
 <div class="flex justify-center">
@@ -256,7 +257,7 @@ To offer the Humanity Check feature, Unstoppable Domains has partnered with iden
 Persona asks users to take a photo of their government-issued ID and a few selfies. Persona uses these images to verify that a person is who they claim to be. Every time Persona verifies a new person, it gives that person a new randomly generated ID number.
 
 <div class="flex justify-center">
-<img src="/images/humanity.png" style="width: 40vw;" />
+<img src="/images/humanity.png" style="max-height: 90%;" />
 </div>
 
 ---
@@ -264,8 +265,17 @@ Persona asks users to take a photo of their government-issued ID and a few selfi
 ### Scopes for Login
 
 <div class="flex justify-center">
-<img src="/images/login-scopes.png" style="width: 40vw;" />
+<img src="/images/login-scopes.png" style="max-height: 90%;" />
 </div>
+
+---
+
+```
+{
+  "scope": "openid wallet email:optional"
+}
+```
+
 
 Login with Unstoppable supports the following scopes which are detailed below:
 
@@ -281,7 +291,40 @@ badges
 
 ---
 
+<div class="flex justify-center">
+<img src="/images/profile.png" style="width: 40vw;" />
+</div>
+
+---
+
+<div class="flex justify-center">
+<img src="/images/owner.png" style="width: 40vw;" />
+</div>
+
+---
+
+### Login Client Analytics
+
+<div class="flex justify-center">
+<img src="/images/analytics.png" style="width: 40vw;" />
+</div>
+
+---
+
+### How does it work
+
+Data is stored on users’ personal servers. To start, Unstoppable will run the first servers, but the goal is to have every user running their own server. Think running a Raspberry Pi or renting a personal server on Amazon or a decentralized protocol. Just like how everyone now owns a mobile phone, we think one day we’ll all have our own server, ultimately giving us full ownership and control of our data.
 
 
+When a user visits an app and logs in with their domain:
 
+1. The app reads the domain and directs the user to the authorization server saved to that domain name.
+2. The user then authenticates and grants access to the information requested by signing a transaction with the wallet that owns their domain.
+3. The app receives an access token and an id token from the authorization server with the user’s contact information (e.g., email address).
+4. The app and user now have an open communication channel!
 
+---
+
+### Demo
+
+[unstoppable-login-web](https://unstoppable-login-web.vercel.app/)

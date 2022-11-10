@@ -41,7 +41,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 # What is Unstoppable Login?
 
 <div class="flex justify-center">
-<img src="/images/login-promo.png" style="width: 40vw;" />
+<img src="/images/login-promo.png" style="width: 35vw;" />
 </div>
 
 Login with Unstoppable allows owners of Unstoppable Domains to log in and share profile information with EVM-compatible applications. This gives users more control over their personal information and allows developers to access information about their users without needing to host or maintain a CRM database.
@@ -68,7 +68,7 @@ h1 {
 # Process
 
 <div class="flex justify-center">
-<img src="/images/login-with-unstoppable-flow-revised.png" style="width: 35vw;" />
+<img src="/images/login-with-unstoppable-flow-revised.png" style="width: 25vw;" />
 </div>
 
 
@@ -145,7 +145,7 @@ The VerifiedAddress returned for a Login session authorized by a Solana wallet w
 
 ### 1.Get Your Client Credentials
 
-<video loop autoplay muted src="https://docs.unstoppabledomains.com/videos/connect-wallet-and-create-client.mp4"></video>
+<video style="width: 40vw" loop autoplay muted src="https://docs.unstoppabledomains.com/videos/connect-wallet-and-create-client.mp4"></video>
 
 ---
 
@@ -223,7 +223,7 @@ const account = uauth.getAuthorizationAccount(authorization);
 ### Step 3: Verify the Login Flow and Scopes
 
 <div class="flex justify-center">
-<img src="/images/step3.png" style="width: 40vw;" />
+<img src="/images/step3.png" style="width: 35vw;" />
 </div>
 
 - Modal 1. User clicks on Login with Unstoppable Button.
@@ -257,7 +257,7 @@ To offer the Humanity Check feature, Unstoppable Domains has partnered with iden
 Persona asks users to take a photo of their government-issued ID and a few selfies. Persona uses these images to verify that a person is who they claim to be. Every time Persona verifies a new person, it gives that person a new randomly generated ID number.
 
 <div class="flex justify-center">
-<img src="/images/humanity.png" style="max-height: 90%;" />
+<img src="/images/humanity.png" style="width: 30vw" />
 </div>
 
 ---
@@ -265,13 +265,13 @@ Persona asks users to take a photo of their government-issued ID and a few selfi
 ### Scopes for Login
 
 <div class="flex justify-center">
-<img src="/images/login-scopes.png" style="max-height: 90%;" />
+<img src="/images/login-scopes.png" style="width: 25vw" />
 </div>
 
 ---
 
 ```
-{
+{ 
   "scope": "openid wallet email:optional"
 }
 ```
@@ -323,8 +323,13 @@ When a user visits an app and logs in with their domain:
 3. The app receives an access token and an id token from the authorization server with the user’s contact information (e.g., email address).
 4. The app and user now have an open communication channel!
 
+
 ---
 
 ### Demo
 
 [unstoppable-login-web](https://unstoppable-login-web.vercel.app/)
+
+---
+
+### Q & A
